@@ -7,11 +7,10 @@ const Menu = electron.Menu
 const system = electron.systemPreferences
 const AutoLaunch = require('auto-launch')
 
-var launch, isLaunch, trayMenu
+var launch, trayMenu
 
 exports.onApp = (app) => {
     if(process.platform == 'darwin') {
-        isLaunch = app.getLoginItemSettings().openAtLogin ? true : false
         app.dock.hide()
         tray()
         launch()
@@ -19,15 +18,16 @@ exports.onApp = (app) => {
 }
 
 function tray() {
+    var image = nativeImage.createFromPath(__dirname + (system.isDarkMode() ? '/static/tray.png' : '/static/tray-black.png'))
+    image.setTemplateImage(true)
+    var tray = new Tray(image)
+
+
     trayMenu = Menu.buildFromTemplate([
-        {label: 'Open at Login', type: 'checkbox', checked: isLaunch, click: launchToggle},
+        {label: 'Open at Login', type: 'checkbox', checked: (app.getLoginItemSettings().openAtLogin ? true : false), click: launchToggle},
         {type: "separator"},
         {label: 'Quit', role: "quit"}
     ])
-    var image = nativeImage.createFromPath(__dirname + (system.isDarkMode() ? '/static/tray.png' : '/static/tray-black.png'))
-    image.setTemplateImage(true)
-
-    var tray = new Tray(image)
 
     tray.on('click', () => {
         if(app.getWindows().size === 0) {
@@ -53,13 +53,7 @@ function launch() {
 
 function launchToggle() {
     launch.isEnabled().then(enabled => {
-        if(!enabled) {
-            launch.enable()
-            trayMenu.items[0].checked = true
-        }
-        else {
-            launch.disable()
-            trayMenu.items[0].checked = false
-        }
+        if(!enabled) launch.enable()
+        else launch.disable()
     })
 }
