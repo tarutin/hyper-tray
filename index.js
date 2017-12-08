@@ -6,6 +6,7 @@ const Tray = electron.Tray
 const Menu = electron.Menu
 const system = electron.systemPreferences
 const AutoLaunch = require('auto-launch')
+const globalShortcut = electron.globalShortcut
 
 var launch, trayMenu
 
@@ -14,7 +15,17 @@ exports.onApp = (app) => {
         app.dock.hide()
         tray()
         launch()
+
+        globalShortcut.register('CommandOrControl+H', () => {
+            app.getWindows().forEach(_win => {
+                _win.hide()
+            })
+        })
     }
+}
+
+exports.onWindow = (win) => {
+
 }
 
 function tray() {
@@ -35,6 +46,9 @@ function tray() {
         }
         else {
             app.getLastFocusedWindow().focus()
+            app.getWindows().forEach(_win => {
+                _win.show()
+            })
         }
     })
 
