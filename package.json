@@ -1,0 +1,35 @@
+{
+    "name": "hyper-tray",
+    "productName": "HyperTray",
+    "version": "0.0.1",
+    "description": "HyperJS for minimalists fast open Hyper from system tray, hidden dock icon and setting auto-launch from tray",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Alexey Tarutin",
+    "private": true,
+    "homepage": "https://github.com/tarutin/hyper-tray",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tarutin/hyper-tray.git"
+    },
+    "bugs": {
+        "url": "https://github.com/tarutin/hyper-tray/issues"
+    },
+    "keywords": [
+        "desktop",
+        "electron",
+        "electron-app",
+        "tray",
+        "hyper",
+        "hyper plugin",
+        "hyper extension",
+        "hyper no dock",
+        "hyper tray"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "auto-launch": "^5.0.3"
+    }
+}
