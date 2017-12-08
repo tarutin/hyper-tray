@@ -8,7 +8,6 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Alexey Tarutin",
-    "private": true,
     "homepage": "https://github.com/tarutin/hyper-tray",
     "repository": {
         "type": "git",
