@@ -1,7 +1,7 @@
 {
     "name": "hyper-tray",
     "productName": "HyperTray",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "HyperJS for minimalists — hidden dock icon, support tray and auto-launch app",
     "main": "index.js",
     "scripts": {
