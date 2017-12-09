@@ -38,9 +38,9 @@ function tray() {
             app.createWindow()
         } else {
             app.getLastFocusedWindow().focus()
-            app.getWindows().forEach(_win => {
-                _win.show()
-            })
+            // app.getWindows().forEach(_win => {
+            //     _win.show()
+            // })
         }
     })
 

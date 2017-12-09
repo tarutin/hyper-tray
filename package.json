@@ -1,7 +1,7 @@
 {
     "name": "hyper-tray",
     "productName": "HyperTray",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "HyperJS for minimalists — hidden dock icon, support tray and auto-launch app",
     "main": "index.js",
     "scripts": {
@@ -16,17 +16,7 @@
     "bugs": {
         "url": "https://github.com/tarutin/hyper-tray/issues"
     },
-    "keywords": [
-        "desktop",
-        "electron",
-        "electron-app",
-        "tray",
-        "hyper",
-        "hyper plugin",
-        "hyper extension",
-        "hyper no dock",
-        "hyper tray"
-    ],
+    "keywords": ["desktop", "electron", "electron-app", "tray", "hyper", "hyper plugin", "hyper extension", "hyper no dock", "hyper tray"],
     "license": "MIT",
     "dependencies": {
         "auto-launch": "^5.0.3"
