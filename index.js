@@ -53,7 +53,7 @@ function tray() {
 
 function launch() {
     let appPath = app.getPath('exe').replace(/\.app\/Content.*/, '.app')
-    launch = new AutoLaunch({ name: 'Hyper', path: appPath, isHidden: true })
+    launch = new AutoLaunch({ name: 'Hyper', path: appPath, isHidden: false })
 }
 
 function launchToggle() {
