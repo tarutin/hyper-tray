@@ -6,22 +6,14 @@ const Tray = electron.Tray
 const Menu = electron.Menu
 const system = electron.systemPreferences
 const AutoLaunch = require('auto-launch')
-// const globalShortcut = electron.globalShortcut
 
 var launch, trayMenu
 
-exports.onApp = (app) => {
-    if(process.platform == 'darwin') {
+exports.onApp = app => {
+    if (process.platform == 'darwin') {
         app.dock.hide()
         tray()
         launch()
-
-
-        // app.getWindows().forEach(_win => {
-        //     globalShortcut.register('CommandOrControl+H', () => {
-        //         _win.hide()
-        //     })
-        // })
     }
 }
 
@@ -30,22 +22,25 @@ function tray() {
     image.setTemplateImage(true)
     var tray = new Tray(image)
 
-
     trayMenu = Menu.buildFromTemplate([
-        {label: 'Open at Login', type: 'checkbox', checked: (app.getLoginItemSettings().openAtLogin ? true : false), click: launchToggle},
-        {type: "separator"},
-        {label: 'Quit', role: "quit"}
+        {
+            label: 'Open at Login',
+            type: 'checkbox',
+            checked: app.getLoginItemSettings().openAtLogin ? true : false,
+            click: launchToggle
+        },
+        { type: 'separator' },
+        { label: 'Quit', role: 'quit' }
     ])
 
     tray.on('click', () => {
-        if(app.getWindows().size === 0) {
+        if (app.getWindows().size === 0) {
             app.createWindow()
-        }
-        else {
+        } else {
             app.getLastFocusedWindow().focus()
-            // app.getWindows().forEach(_win => {
-            //     _win.show()
-            // })
+            app.getWindows().forEach(_win => {
+                _win.show()
+            })
         }
     })
 
@@ -58,13 +53,12 @@ function tray() {
 
 function launch() {
     let appPath = app.getPath('exe').replace(/\.app\/Content.*/, '.app')
-    launch = new AutoLaunch({ name:'Hyper', path:appPath, isHidden:true })
+    launch = new AutoLaunch({ name: 'Hyper', path: appPath, isHidden: true })
 }
-
 
 function launchToggle() {
     launch.isEnabled().then(enabled => {
-        if(!enabled) launch.enable()
+        if (!enabled) launch.enable()
         else launch.disable()
     })
 }
