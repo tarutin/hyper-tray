@@ -1,9 +1,12 @@
 [Hyper](https://hyper.is) plugin for minimalists — fast open Hyper from system tray, hidden dock icon and setting auto-launch from tray.
 
-[![npm](https://img.shields.io/npm/dt/hyper-tray.svg)]() [![GitHub package version](https://img.shields.io/github/package-json/v/badges/shields.svg)]()
+<p align="center">
+    <img src="https://img.shields.io/npm/dt/hyper-tray.svg"/>
+    <img src="https://img.shields.io/github/package-json/v/badges/shields.svg"/>
+</p>
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/tarutin/hyper-tray/master/static/preview.gif" width="666" alt="Hyper tray" align="center">
+    <img src="https://raw.githubusercontent.com/tarutin/hyper-tray/master/static/preview.gif" width="666" alt="Hyper tray"/>
 </p>
 <br/>
 
