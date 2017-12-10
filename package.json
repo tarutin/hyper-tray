@@ -2,7 +2,7 @@
     "name": "hyper-tray",
     "productName": "HyperTray",
     "version": "1.0.6",
-    "description": "HyperJS for minimalists — hidden dock icon, support tray and auto-launch app",
+    "description": "Hyper.app for minimalists — hidden dock icon, support tray and auto-launch app",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
