@@ -27,10 +27,10 @@ function tray() {
             label: 'Open at Login',
             type: 'checkbox',
             checked: app.getLoginItemSettings().openAtLogin ? true : false,
-            click: launchToggle
+            click: launchToggle,
         },
         { type: 'separator' },
-        { label: 'Quit', role: 'quit' }
+        { label: 'Quit', role: 'quit' },
     ])
 
     tray.on('click', () => {
