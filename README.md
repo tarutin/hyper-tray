@@ -2,7 +2,6 @@
 
 <p align="center">
     <img src="https://img.shields.io/npm/dt/hyper-tray.svg"/>
-    <img src="https://img.shields.io/github/package-json/v/badges/shields.svg"/>
 </p>
 
 <p align="center">
