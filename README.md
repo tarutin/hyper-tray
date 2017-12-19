@@ -22,6 +22,7 @@ $ npm install hyper-tray
 ```bash
 $ cd ~/.hyper_plugins/local/
 $ git clone https://github.com/tarutin/hyper-tray.git
+$ cd hyper-tray
 $ npm install
 ```
 Add the name of the directory to `localPlugins` in `~/.hyper.js` and Reload terminal window.
